@@ -1,0 +1,1234 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Api of Etransit - 1.0</title>
+    <style type="text/css">
+      body {
+      	font-family: Trebuchet MS, sans-serif;
+      	font-size: 15px;
+      	color: #444;
+      	margin-right: 24px;
+      }
+      
+      h1	{
+      	font-size: 25px;
+      }
+      h2	{
+      	font-size: 20px;
+      }
+      h3	{
+      	font-size: 16px;
+      	font-weight: bold;
+      }
+      hr	{
+      	height: 1px;
+      	border: 0;
+      	color: #ddd;
+      	background-color: #ddd;
+      }
+      
+      .app-desc {
+        clear: both;
+        margin-left: 20px;
+      }
+      .param-name {
+        width: 100%;
+      }
+      .license-info {
+        margin-left: 20px;
+      }
+      
+      .license-url {
+        margin-left: 20px;
+      }
+      
+      .model {
+        margin: 0 0 0px 20px;
+      }
+      
+      .method {
+        margin-left: 20px;
+      }
+      
+      .method-notes	{
+      	margin: 10px 0 20px 0;
+      	font-size: 90%;
+      	color: #555;
+      }
+      
+      pre {
+        padding: 10px;
+        margin-bottom: 2px;
+      }
+      
+      .http-method {
+       text-transform: uppercase;
+      }
+      
+      pre.get {
+        background-color: #0f6ab4;
+      }
+      
+      pre.post {
+        background-color: #10a54a;
+      }
+      
+      pre.put {
+        background-color: #c5862b;
+      }
+      
+      pre.delete {
+        background-color: #a41e22;
+      }
+      
+      .huge	{
+      	color: #fff;
+      }
+      
+      pre.example {
+        background-color: #f3f3f3;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      
+      code {
+        white-space: pre;
+      }
+      
+      .nickname {
+        font-weight: bold;
+      }
+      
+      .method-path {
+        font-size: 1.5em;
+        background-color: #0f6ab4;
+      }
+      
+      .up {
+        float:right;
+      }
+      
+      .parameter {
+        width: 500px;
+      }
+      
+      .param {
+        width: 500px;
+        padding: 10px 0 0 20px;
+        font-weight: bold;
+      }
+      
+      .param-desc {
+        width: 700px;
+        padding: 0 0 0 20px;
+        color: #777;
+      }
+      
+      .param-type {
+        font-style: italic;
+      }
+      
+      .param-enum-header {
+      width: 700px;
+      padding: 0 0 0 60px;
+      color: #777;
+      font-weight: bold;
+      }
+      
+      .param-enum {
+      width: 700px;
+      padding: 0 0 0 80px;
+      color: #777;
+      font-style: italic;
+      }
+      
+      .field-label {
+        padding: 0;
+        margin: 0;
+        clear: both;
+      }
+      
+      .field-items	{
+      	padding: 0 0 15px 0;
+      	margin-bottom: 15px;
+      }
+      
+      .return-type {
+        clear: both;
+        padding-bottom: 10px;
+      }
+      
+      .param-header {
+        font-weight: bold;
+      }
+      
+      .method-tags {
+        text-align: right;
+      }
+      
+      .method-tag {
+        background: none repeat scroll 0% 0% #24A600;
+        border-radius: 3px;
+        padding: 2px 10px;
+        margin: 2px;
+        color: #FFF;
+        display: inline-block;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>Api of Etransit - 1.0</h1>
+    <div class="app-desc">This projet name's Etransit,this projet permit to send and receive a collis at a dispora people of africa  with a reasonable price and to respect the delay</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="prunellengolong13@gmail.com">prunellengolong13@gmail.com</a></div>
+    <div class="app-desc">Version: 1.0.11</div>
+    
+    <div class="license-info">Apache 2.0</div>
+    <div class="license-url">http://www.apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Annonces">Annonces</a></h4>
+  <ul>
+  <li><a href="#annoncesCreatePost"><code><span class="http-method">post</span> /annonces/create</code></a></li>
+  <li><a href="#annoncesTypeAnnonceGet"><code><span class="http-method">get</span> /annonces/typeAnnonce</code></a></li>
+  <li><a href="#annoncesUserUserIdGet"><code><span class="http-method">get</span> /annonces/user/{userId}</code></a></li>
+  <li><a href="#deleteAnnonceIdAnnonceDelete"><code><span class="http-method">delete</span> /deleteAnnonce/{idAnnonce}</code></a></li>
+  <li><a href="#filterannoncesbyPaysarriveandtypeGet"><code><span class="http-method">get</span> /filterannoncesby/paysarriveandtype</code></a></li>
+  <li><a href="#filterannoncesbyPaysdepartandtypeGet"><code><span class="http-method">get</span> /filterannoncesby/paysdepartandtype</code></a></li>
+  <li><a href="#listannoncesGet"><code><span class="http-method">get</span> /listannonces</code></a></li>
+  </ul>
+  <h4><a href="#User">User</a></h4>
+  <ul>
+  <li><a href="#connexionPost"><code><span class="http-method">post</span> /connexion</code></a></li>
+  <li><a href="#usersPost"><code><span class="http-method">post</span> /users</code></a></li>
+  </ul>
+
+  <h1><a name="Annonces">Annonces</a></h1>
+  <div class="method"><a name="annoncesCreatePost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /annonces/create</code></pre></div>
+    <div class="method-summary">Création d'une annonce (<span class="nickname">annoncesCreatePost</span>)</div>
+    <div class="method-notes">Requête permettant de créer une annonce.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>multipart/form-data</code></li>
+    </ul>
+
+
+
+
+    <h3 class="field-label">Form parameters</h3>
+    <div class="field-items">
+      <div class="param">libelle (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">description (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">villeDep (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">villeArrivé (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">paysDep (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">paysArrivé (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">dateDep (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: date-time</div>      <div class="param">nombreKilo (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: double</div>      <div class="param">prixparkilo (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: double</div>      <div class="param">prixpourtoutkilo (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: double</div>      <div class="param">detailkilo (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">cassableoupas (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">numeroRecepteur (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: double</div>      <div class="param">nomRecepteur (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">encoursouvalide (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">verifieoupas (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">valeur (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: double</div>      <div class="param">typeAnnonce (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: int32</div>      <div class="param">userId (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: int32</div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#annonces">annonces</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Annonce créée avec succès.
+        <a href="#annonces">annonces</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="annoncesTypeAnnonceGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /annonces/typeAnnonce</code></pre></div>
+    <div class="method-summary">Recherche d'annonces par type (<span class="nickname">annoncesTypeAnnonceGet</span>)</div>
+    <div class="method-notes">Requête permettant de rechercher des annonces par type.</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">typeAnnonce (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; L&#x27;identifiant du type d&#x27;annonce. format: int32</div>    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#annonces">annonces</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+}, {
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Liste des annonces récupérée avec succès.
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="annoncesUserUserIdGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /annonces/user/{userId}</code></pre></div>
+    <div class="method-summary">Recherche d'annonces par utilisateur (<span class="nickname">annoncesUserUserIdGet</span>)</div>
+    <div class="method-notes">Requête permettant de rechercher des annonces par utilisateur.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">userId (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; L&#x27;identifiant de l&#x27;utilisateur. format: int32</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#annonces">annonces</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+}, {
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Liste des annonces récupérée avec succès.
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteAnnonceIdAnnonceDelete"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /deleteAnnonce/{idAnnonce}</code></pre></div>
+    <div class="method-summary">Suppression d'une annonce (<span class="nickname">deleteAnnonceIdAnnonceDelete</span>)</div>
+    <div class="method-notes">Requête permettant de supprimer une annonce.</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">idAnnonce (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; L&#x27;identifiant de l&#x27;annonce à supprimer. format: int32</div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Annonce supprimée avec succès.
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="filterannoncesbyPaysarriveandtypeGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /filterannoncesby/paysarriveandtype</code></pre></div>
+    <div class="method-summary">Recherche d'annonces par pays d'arrivée et par type (<span class="nickname">filterannoncesbyPaysarriveandtypeGet</span>)</div>
+    <div class="method-notes">Requête permettant de rechercher des annonces par pays d'arrivée et par type.</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">codepays (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Le code du pays d&#x27;arrivée. </div>      <div class="param">typeAnnonce (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; L&#x27;identifiant du type d&#x27;annonce. format: int32</div>    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#annonces">annonces</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+}, {
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Liste des annonces récupérée avec succès.
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="filterannoncesbyPaysdepartandtypeGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /filterannoncesby/paysdepartandtype</code></pre></div>
+    <div class="method-summary">Recherche d'annonces par pays de départ et par type (<span class="nickname">filterannoncesbyPaysdepartandtypeGet</span>)</div>
+    <div class="method-notes">Requête permettant de rechercher des annonces par pays de départ et par type.</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">codepays (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Le code du pays de départ. </div>      <div class="param">typeAnnonce (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; L&#x27;identifiant du type d&#x27;annonce. format: int32</div>    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#annonces">annonces</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+}, {
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Liste des annonces récupérée avec succès.
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="listannoncesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /listannonces</code></pre></div>
+    <div class="method-summary">Liste des annonces (<span class="nickname">listannoncesGet</span>)</div>
+    <div class="method-notes">Requête permettant d'afficher la liste des annonces.</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#annonces">annonces</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+}, {
+  "typeAnnonce" : {
+    "idType" : 6,
+    "typeAnnonce" : "typeAnnonce"
+  },
+  "Description" : "Description",
+  "valeur" : 7.061401241503109,
+  "detailKilo" : true,
+  "cassableOupas" : true,
+  "isDelete" : true,
+  "libelle" : "libelle",
+  "dateDep" : "2000-01-23",
+  "paysDepart" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "villeArrive" : "villeArrive",
+  "villeDepart" : "villeDepart",
+  "prixPourToutKilo" : 5.637376656633329,
+  "nombreKilo" : 1.4658129805029452,
+  "prixParKilo" : 5.962133916683182,
+  "verifieOupas" : true,
+  "idAnnonce" : 0,
+  "numeroRecepteur" : 2.3021358869347655,
+  "nomBeneficiaire" : "nomBeneficiaire",
+  "user" : {
+    "idUser" : 0,
+    "password" : "password",
+    "passport" : "passport",
+    "paysDelivrance" : {
+      "codepays" : "codepays",
+      "name" : "name",
+      "Image" : "Image"
+    },
+    "name" : "name",
+    "carteVerso" : "carteVerso",
+    "carteRecto" : "carteRecto",
+    "email" : "email"
+  },
+  "enCourOuvalidé" : true
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Liste des annonces récupérée avec succès.
+        
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="User">User</a></h1>
+  <div class="method"><a name="connexionPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /connexion</code></pre></div>
+    <div class="method-summary">Connexion d'un utilisateur (<span class="nickname">connexionPost</span>)</div>
+    <div class="method-notes">Cette méthode permet à un utilisateur de se connecter en vérifiant ses informations d'identification.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/x-www-form-urlencoded</code></li>
+    </ul>
+
+
+
+
+    <h3 class="field-label">Form parameters</h3>
+    <div class="field-items">
+      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">password (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#user">user</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "idUser" : 0,
+  "password" : "password",
+  "passport" : "passport",
+  "paysDelivrance" : {
+    "codepays" : "codepays",
+    "name" : "name",
+    "Image" : "Image"
+  },
+  "name" : "name",
+  "carteVerso" : "carteVerso",
+  "carteRecto" : "carteRecto",
+  "email" : "email"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Utilisateur trouvé et authentifié.
+        <a href="#user">user</a>
+    <h4 class="field-label">401</h4>
+    Informations d&#x27;identification incorrectes.
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="usersPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /users</code></pre></div>
+    <div class="method-summary">Inscription d'un utilisateur (<span class="nickname">usersPost</span>)</div>
+    <div class="method-notes">Requête permettant l'inscription d'un utilisateur.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>multipart/form-data</code></li>
+    </ul>
+
+
+
+
+    <h3 class="field-label">Form parameters</h3>
+    <div class="field-items">
+      <div class="param">carteRecto (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: binary</div>      <div class="param">carteVerso (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: binary</div>      <div class="param">passport (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: binary</div>      <div class="param">name (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">password (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">country1 (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">country2 (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Utilisateur créé avec succès.
+        <a href="#"></a>
+    <h4 class="field-label">415</h4>
+    Seulement les images jpeg ou png sont acceptées.
+        <a href="#"></a>
+    <h4 class="field-label">422</h4>
+    L&#x27;utilisateur existe déjà.
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#Type"><code>Type</code></a></li>
+    <li><a href="#annonces"><code>annonces</code></a></li>
+    <li><a href="#annonces_create_body"><code>annonces_create_body</code></a></li>
+    <li><a href="#connexion_body"><code>connexion_body</code></a></li>
+    <li><a href="#country"><code>country</code></a></li>
+    <li><a href="#user"><code>user</code></a></li>
+    <li><a href="#users_body"><code>users_body</code></a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="Type"><code>Type</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">idType (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> L&#x27;identifiant unique du type d&#x27;annonce. format: int32</div>
+<div class="param">typeAnnonce (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Le type d&#x27;annonce. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="annonces"><code>annonces</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">idAnnonce (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> L&#x27;identifiant unique de l&#x27;annonce. format: int32</div>
+<div class="param">user (optional)</div><div class="param-desc"><span class="param-type"><a href="#user">user</a></span>  </div>
+<div class="param">typeAnnonce (optional)</div><div class="param-desc"><span class="param-type"><a href="#Type">Type</a></span>  </div>
+<div class="param">libelle (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Le libellé de l&#x27;annonce. </div>
+<div class="param">Description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> La description de l&#x27;annonce. </div>
+<div class="param">villeDepart (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> La ville de départ. </div>
+<div class="param">villeArrive (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> La ville d&#x27;arrivée. </div>
+<div class="param">paysDepart (optional)</div><div class="param-desc"><span class="param-type"><a href="#country">country</a></span>  </div>
+<div class="param">paysArrive (optional)</div><div class="param-desc"><span class="param-type"><a href="#country">country</a></span>  </div>
+<div class="param">dateDep (optional)</div><div class="param-desc"><span class="param-type"><a href="#date">date</a></span> La date de départ. format: date</div>
+<div class="param">nombreKilo (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">prixParKilo (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">prixPourToutKilo (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">detailKilo (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">cassableOupas (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">numeroRecepteur (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">nomBeneficiaire (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">enCourOuvalidé (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">verifieOupas (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">valeur (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">isDelete (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="annonces_create_body"><code>annonces_create_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">libelle (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">villeDep (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">villeArrivé (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">paysDep (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">paysArrivé (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">dateDep (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+<div class="param">nombreKilo (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">prixparkilo (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">prixpourtoutkilo (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">detailkilo (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">cassableoupas (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">numeroRecepteur (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">nomRecepteur (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">encoursouvalide (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">verifieoupas (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">valeur (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span>  format: double</div>
+<div class="param">typeAnnonce (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+<div class="param">userId (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="connexion_body"><code>connexion_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">email </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Email de l&#x27;utilisateur. </div>
+<div class="param">password </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Mot de passe de l&#x27;utilisateur. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="country"><code>country</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">codepays (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Le code du pays. </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Le nom du pays. </div>
+<div class="param">Image (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> L&#x27;image du pays. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="user"><code>user</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">idUser </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> L&#x27;identifiant unique de l&#x27;utilisateur. format: int32</div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Le nom de l&#x27;utilisateur. </div>
+<div class="param">email </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> L&#x27;email de l&#x27;utilisateur. </div>
+<div class="param">password </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Le mot de passe de l&#x27;utilisateur. </div>
+<div class="param">carteRecto (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> La carte d&#x27;identité recto de l&#x27;utilisateur. </div>
+<div class="param">carteVerso (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> La carte d&#x27;identité verso de l&#x27;utilisateur. </div>
+<div class="param">passport (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Le passport de l&#x27;utilisateur. </div>
+<div class="param">paysDelivrance (optional)</div><div class="param-desc"><span class="param-type"><a href="#country">country</a></span>  </div>
+<div class="param">localité (optional)</div><div class="param-desc"><span class="param-type"><a href="#country">country</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="users_body"><code>users_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">carteRecto (optional)</div><div class="param-desc"><span class="param-type"><a href="#binary">byte[]</a></span>  format: binary</div>
+<div class="param">carteVerso (optional)</div><div class="param-desc"><span class="param-type"><a href="#binary">byte[]</a></span>  format: binary</div>
+<div class="param">passport (optional)</div><div class="param-desc"><span class="param-type"><a href="#binary">byte[]</a></span>  format: binary</div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">password (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">country1 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">country2 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
